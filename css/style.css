@@ -11,6 +11,17 @@ body {
     font-family: "Jost", sans-serif;
 }
 
+.container {
+    max-width: 1720px;
+}
+
+@media (max-width: 1760px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+
 
 .site-header {
     background: #ffffff;
@@ -160,7 +171,7 @@ body {
 }
 
 .header-container {
-    max-width: 1400px;
+    max-width: 1720px;
     margin: 0 auto;
     padding: 0 30px;
     display: grid;
@@ -169,6 +180,13 @@ body {
     gap: 30px;
     overflow: visible;
 }
+
+@media (max-width: 1760px) {
+    .header-container {
+        max-width: 95%;
+    }
+}
+
 
 .left-nav {
     justify-self: start;
@@ -439,7 +457,7 @@ body {
     transform: translateY(-50%) rotate(90deg);
 }
 
-.account-link{
+.account-link {
     text-decoration: none;
     color: #333;
     font-size: 13px;
@@ -676,12 +694,487 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-section-content h1 {
-        font-size: 36px;
-    }
-
     .tagline {
         font-size: 12px;
         letter-spacing: 2px;
+    }
+}
+
+/* ==========================================================================
+   About Us Section
+   ========================================================================== */
+
+.about-us-section {
+    padding: 120px 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.about-images-wrapper {
+    position: relative;
+    padding-right: 20px;
+    padding-bottom: 0px;
+}
+
+.main-image img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+.overlap-image {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 70%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    padding: 10px;
+}
+
+.overlap-image img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+.about-content {
+    padding-left: 15px;
+}
+
+.subtitle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.subtitle-wrapper .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #9D5F6D;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.subtitle-wrapper .subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #050505;
+    letter-spacing: 0.5px;
+    font-family: "Jost", sans-serif;
+}
+
+.section-title {
+    font-size: 56px;
+    color: #9D5F6D;
+    font-family: "Cormorant Garamond", serif;
+    line-height: 1.1;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.section-desc {
+    font-size: 18px;
+    color: #222222;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: left;
+    font-weight: 400;
+    font-family: "Jost", sans-serif;
+    opacity: 0.8;
+}
+
+.vision-philosophy-box {
+    background-color: #FAF7F5;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 50px;
+}
+
+.info-item {
+    padding: 10px;
+}
+
+.info-item .icon-box {
+    margin-bottom: 25px;
+}
+
+.info-item .icon-box img {
+    height: 45px;
+    width: auto;
+}
+
+.info-item h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #050505;
+    margin-bottom: 15px;
+    font-family: "Jost", sans-serif;
+}
+
+.info-item p {
+    font-size: 15px;
+    color: #050505;
+    line-height: 1.62;
+    margin: 0;
+    opacity: 0.7;
+    font-family: "Jost", sans-serif;
+}
+
+.about-footer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.btn-learn-more {
+    background-color: #9D5F6D;
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: "Jost", sans-serif;
+}
+
+.btn-learn-more:hover {
+    background-color: #834f5b;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(157, 95, 109, 0.25);
+}
+
+.btn-learn-more img {
+    width: 14px;
+    filter: brightness(0) invert(1);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.phone-icon-circle {
+    width: 55px;
+    height: 55px;
+    background-color: #9D5F6D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.phone-icon-circle:hover {
+    transform: scale(1.1);
+}
+
+.phone-icon-circle img {
+    width: 22px;
+    filter: brightness(0) invert(1);
+}
+
+.phone-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-text .label {
+    font-size: 14px;
+    color: #050505;
+    font-weight: 500;
+    opacity: 0.6;
+    font-family: "Jost", sans-serif;
+}
+
+.phone-text .number {
+    font-size: 20px;
+    color: #050505;
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+}
+
+/* Responsiveness for About Us */
+@media (max-width: 1200px) {
+    .section-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-us-section {
+        padding: 80px 0;
+    }
+
+    .about-images-wrapper {
+        margin-bottom: 80px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .subtitle-wrapper {
+        justify-content: center;
+    }
+
+    .section-title,
+    .section-desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-footer {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 38px;
+    }
+
+    .vision-philosophy-box {
+        padding: 30px 20px;
+    }
+
+    .info-item {
+        margin-bottom: 30px;
+    }
+
+    .info-item:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .btn-learn-more {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   Rituals Section
+   ========================================================================== */
+
+.rituals-section {
+    padding: 120px 0;
+    background: url('../images/ritualbg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.rituals-header {
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-title-wrapper {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.title-bg-flower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.small-title {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    color: #784E40;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.rituals-main-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 58px;
+    color: #784E40;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.rituals-desc {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    color: #784E40;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    opacity: 0.8;
+}
+
+.rituals-carousel {
+    margin: 0 -15px;
+}
+
+.ritual-item {
+    padding: 0 15px;
+    outline: none;
+}
+
+.ritual-card {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background: transparent;
+}
+
+.mt-lg-n5 {
+    margin-top: -40px;
+}
+
+.ritual-image {
+    position: relative;
+    line-height: 0;
+}
+
+.ritual-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.ritual-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #A36F7A;
+    /* Dusty Rose from image */
+    color: #ffffff;
+    padding: 15px 25px;
+    font-family: "Jost", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    width: auto;
+    min-width: 200px;
+}
+
+.ritual-card:hover .ritual-label {
+    background-color: #784E40;
+}
+
+/* Slick Dots Styling */
+.pagination-dots {
+    margin-top: 40px;
+}
+
+.pagination-dots .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pagination-dots .slick-dots li {
+    margin: 0;
+}
+
+.pagination-dots .slick-dots li .dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #784E40;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-dots .slick-dots li.slick-active .dot {
+    background-color: #A36F7A;
+    border-color: #A36F7A;
+    transform: scale(1.2);
+}
+
+.pagination-dots .slick-dots li button {
+    display: none;
+}
+
+/* Responsiveness for Rituals */
+@media (max-width: 1200px) {
+    .ritual-image img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 991px) {
+    .rituals-main-title {
+        font-size: 48px;
+    }
+
+    .mt-lg-n5 {
+        margin-top: 0;
+    }
+
+    .ritual-image img {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rituals-section {
+        padding: 80px 0;
+    }
+
+    .rituals-main-title {
+        font-size: 38px;
+    }
+
+    .ritual-image img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .rituals-main-title {
+        font-size: 32px;
+    }
+
+    .ritual-label {
+        width: 100%;
+        text-align: center;
     }
 }
