@@ -1002,16 +1002,17 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
+    z-index: 2;
 }
 
 .title-bg-flower {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
     width: 66px;
     height: 94px;
-    opacity: 1;
+    opacity: 0.3;
     z-index: -1;
     pointer-events: none;
     object-fit: contain;
@@ -1033,6 +1034,8 @@ body {
     font-weight: 400;
     margin-bottom: 20px;
     line-height: 1.1;
+    position: relative;
+    z-index: 2;
 }
 
 .rituals-desc {
@@ -1209,6 +1212,7 @@ body {
 .section-header {
     margin-bottom: 70px;
     position: relative;
+    z-index: 2;
 }
 
 .section-main-title {
@@ -1220,6 +1224,8 @@ body {
     margin: 15px auto 0;
     line-height: 58px;
     letter-spacing: 0px;
+    position: relative;
+    z-index: 2;
 }
 
 .product-card {
@@ -1307,13 +1313,12 @@ body {
 
 .product-title {
     font-family: "Cormorant Garamond", serif;
-    font-size: 20px;
+    font-size: 23px;
     color: #1a1a1a;
     font-weight: 500;
     margin-bottom: 10px;
     line-height: 1.3;
     text-align: left;
-    height: 52px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1324,19 +1329,19 @@ body {
 .product-rating {
     display: flex;
     align-items: center;
-    gap: 3px;
-    margin-bottom: 12px;
+    gap: 2px;
+    margin-bottom: 8px;
 }
 
 .star-icon {
     color: #FFB800;
-    font-size: 14px;
+    font-size: 24px;
 }
 
 .rating-count {
-    font-size: 12px;
+    font-size: 11px;
     color: #888;
-    margin-left: 6px;
+    margin-left: 4px;
     font-family: "Jost", sans-serif;
 }
 
@@ -1368,5 +1373,139 @@ body {
     .product-title {
         font-size: 18px;
         height: auto;
+    }
+}
+
+/* ==========================================================================
+   Connect Section
+   ========================================================================== */
+
+.connect-section {
+    padding: 120px 0;
+    background: url('../images/lets-connect.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.connect-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(181, 107, 120, 0.55);
+    z-index: 1;
+}
+
+.connect-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.connect-card {
+    background: #FFFBFA;
+    padding: 80px 70px;
+    border-radius: 24px;
+    max-width: 920px;
+    margin: 0 auto;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+}
+
+.connect-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 58px;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.form-control-fay,
+.form-select-fay {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 25px;
+    font-family: "Jost", sans-serif;
+    font-size: 15px;
+    color: #333;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    margin-bottom: 0;
+}
+
+.form-control-fay:focus,
+.form-select-fay:focus {
+    outline: none;
+    box-shadow: 0 4px 25px rgba(157, 95, 109, 0.12);
+    background-color: #fff;
+}
+
+.form-control-fay::placeholder {
+    color: #999;
+}
+
+.form-select-fay {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+}
+
+.btn-submit-fay {
+    background-color: #9D5F6D;
+    color: #ffffff;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-submit-fay:hover {
+    background-color: #834f5b;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(157, 95, 109, 0.3);
+}
+
+@media (max-width: 991px) {
+    .connect-card {
+        padding: 50px 40px;
+    }
+
+    .connect-title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .connect-section {
+        padding: 80px 0;
+    }
+
+    .connect-card {
+        padding: 40px 25px;
+    }
+
+    .connect-title {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+
+    .form-control-fay,
+    .form-select-fay {
+        padding: 15px 20px;
     }
 }
