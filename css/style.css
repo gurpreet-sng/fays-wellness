@@ -594,7 +594,9 @@ body {
         padding-top: 100px;
     }
 
-
+    .nav-menu li {
+        width: 100%;
+    }
 
     .header-container {
         display: flex;
@@ -621,6 +623,7 @@ body {
         display: block !important;
         visibility: visible;
         opacity: 1;
+        overflow-y: auto;
     }
 
     .header-nav.left-nav.active {
@@ -645,13 +648,18 @@ body {
         visibility: visible;
         transform: none;
         box-shadow: none;
-        padding: 10px 0 10px 20px;
+        padding: 10px 0 10px 0px;
         display: none;
         background: transparent;
     }
 
     .dropdown.active .dropdown-menu {
         display: block;
+    }
+
+    .dropdown.active .dropdown-toggle::before {
+        transform: translateY(-50%) rotate(180deg);
+        /* 180deg rotation of a down arrow (border-top) makes it point up */
     }
 
     .header-logo {
@@ -2452,5 +2460,9 @@ body {
 
     .footer-main {
         padding-bottom: 0px;
+    }
+
+    .menu-toggle{
+        background: #fff;
     }
 }
