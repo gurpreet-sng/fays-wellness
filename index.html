@@ -28,7 +28,13 @@
   <header class="site-header">
     <div class="header-container">
 
-      <nav class="header-nav left-nav">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <img src="images/menu.png" alt="Menu">
+      </button>
+
+      <div class="menu-overlay" id="menuOverlay"></div>
+
+      <nav class="header-nav left-nav" id="headerNav">
         <ul class="nav-menu">
           <li><a href="#" class="nav-link">HOME</a></li>
           <li class="dropdown">
@@ -683,6 +689,52 @@
 
   <script>
 
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const headerNav = document.getElementById('headerNav');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    const menuIcon = '<img src="images/menu.png" alt="Menu">';
+    const closeIcon = '<img src="images/close.png" alt="Close">';
+
+    function updateMenuState(isActive) {
+      if (isActive) {
+        headerNav.classList.add('active');
+        menuOverlay.classList.add('active');
+        menuToggle.innerHTML = closeIcon;
+        document.body.style.overflow = 'hidden';
+      } else {
+        headerNav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        menuToggle.innerHTML = menuIcon;
+        document.body.style.overflow = '';
+      }
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isActive = !headerNav.classList.contains('active');
+      updateMenuState(isActive);
+    });
+
+    menuOverlay.addEventListener('click', () => {
+      updateMenuState(false);
+    });
+
+    // Mobile Dropdown Toggle
+    if (window.innerWidth <= 767) {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        toggle.addEventListener('click', (e) => {
+          if (window.innerWidth <= 767) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+          }
+        });
+      });
+    }
+
+
     const searchToggle = document.getElementById('searchToggle');
     const searchField = document.getElementById('searchField');
     const searchClose = document.getElementById('searchClose');
@@ -740,14 +792,7 @@
     });
 
 
-    const header = document.querySelector('.site-header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
+
 
     // Slick Carousel Initialization
     $(document).ready(function () {
