@@ -455,6 +455,7 @@ body {
 }
 
 .account-link {
+    display: inline-block !important;
     text-decoration: none;
     color: #333;
     font-size: 13px;
@@ -465,6 +466,8 @@ body {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .account-link::before {
@@ -488,9 +491,11 @@ body {
 }
 
 .cart-container {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 10px;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .cart-link {
@@ -543,11 +548,14 @@ body {
 }
 
 .cart-total {
+    display: inline-block !important;
     font-size: 14px;
     font-weight: 600;
     color: #333;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .cart-container:hover .cart-total {
@@ -2462,7 +2470,7 @@ body {
         padding-bottom: 0px;
     }
 
-    .menu-toggle{
+    .menu-toggle {
         background: #fff;
     }
 }
